@@ -7,7 +7,7 @@ import { removeBookId } from '../utils/localStorage';
 
 
 import { REMOVE_BOOK } from '../utils/mutations';
-import { GET_ME } from '../utils/queries';
+import { QUERY_ME } from '../utils/queries';
 
 
 const SavedBooks = () => {
@@ -40,7 +40,7 @@ const SavedBooks = () => {
   //   getUserData();
   // }, [userDataLength]);
 
-  const { loading, data } = useQuery(GET_ME, {
+  const { loading, data } = useQuery(QUERY_ME, {
     variables: { _id: data.id },
   }).then(setUserData(data));
 
